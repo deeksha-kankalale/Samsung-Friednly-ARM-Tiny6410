@@ -1,0 +1,31 @@
+How to write a Driver and User program for Samsung Friendly Arm 11 development board.
+
+
+Set up the environment first. You will need a Cross compile. Follow the steps on SETTING up environment.
+
+
+
+Step 1 : Build a Kernel Object file 
+•	Write Device Driver code. Save the file.
+•	Modify the Kconfig File to show your device.
+•	Run “make menuconfig” in terminal in linux folder.
+•	Select device driver > Char >  find your driver and change  * to <M>. Save and exit.
+•	“mv config.txt .config” command in your terminal.
+•	“Make modules” command in your terminal.
+•	This generated .ko file, which can be copied to a pendrive
+
+
+
+Step 2 : Build a user object file
+•	Write the user file.
+•	Write the makefile document
+•	Execute the terminal command “make” to generate .o file.
+Copy the .ko and .o file into a pendrive and connect the pendrive to ARM 11 board.
+
+
+
+Open the SSH terminal and connect to the ARM board.
+Step 3 : Running the driver program and user program to see the output
+•	“Cd udisk” to enter your pendrive.
+•	“insmod driver_filename.ko” to install the device driver module.
+•	“./ user_filename args to execute the user file.
